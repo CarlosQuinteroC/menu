@@ -4,25 +4,31 @@ from opciones.opcion3 import function_opcion3
 
 def my_menu():
     activation_code = True
-    print("_"* 110)
-    print (" "*30 , "Bienvedido al menu principal")
+    print("_" * 110)
+    print(" "*30, "Bienvenido al menú principal")
     print("\n")
-    print ("Selecione una de las siguientes opciones, ingrese el número deseado y presione la techa \"enter\" a continuación")
+    print("Seleccione una de las siguientes opciones, ingrese el número deseado y presione la tecla \"enter\" a continuación")
     print("_" * 110)
     while activation_code:
-        option = input("1. Abrir opcion 1 \n2. Abrir opción 2 \n3. abrir opcion 3 \n4. Cerrar \nSeleccion -> ")
+         
+        option = input("""
+              1: Abrir opción 1
+              2: Abrir opción 2
+              3: Abrir opción 3
+              4: Cerrar
+              Seleccion ->
+                """)
         match option:
             case "1":
-                print("selecciono opcion 1")
-                print(function_opcion1())
+                function_opcion1()
             case "2":
-                print("Selecciono opcion2")
-                print(function_opcion2())
+                function_opcion2()
             case "3":
-                print("Selecciono la opcion 3")
-                print(function_opcion3())
+                function_opcion3()
             case "4":
-                print("Seleccionaste cerrar ADIOS")
-                activation_code=False
+                print("Seleccionaste cerrar. ¡ADIOS!")
+                activation_code = False
                 break
-my_menu()
+
+if __name__ == "__main__":
+    my_menu()
